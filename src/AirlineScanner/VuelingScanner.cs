@@ -68,7 +68,7 @@ namespace AirlineScanner.Core
       {
         //log
       }
-      return flights;
+      return flights.OrderBy(f => f.DepartureAirportCode);
     }
 
     public async Task<IEnumerable<Flight>> GetFlights(string departureAirport, string arrivalAirport, bool roundtrip, DateTime? outboundDate, DateTime? inboundDate)
